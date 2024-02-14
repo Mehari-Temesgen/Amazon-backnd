@@ -1,5 +1,3 @@
-const { onRequest } = require("firebase-functions/v2/https");
-// const logger = require("firebase-functions/logger");
 const express = require("express");
 const cors = require("cors");
 const stripe = require("stripe")(
@@ -23,4 +21,4 @@ app.post("/payments/create", async (request, response) => {
   });
 });
 // - Listen command
-exports.api = onRequest(app);
+app.listen(3000, () => console.log("Listening on port 3000"));
